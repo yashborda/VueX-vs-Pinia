@@ -2,6 +2,10 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <div class="counter">
+      <!-- use data variable  -->
+      <!-- {{ count }}  -->
+
+      <!-- direct use from store  -->
       {{ getCount }}
     </div>
 
@@ -19,7 +23,7 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      count: useCounterStore().count,
+      // count: useCounterStore().count,
     }
   },
   computed: {
@@ -29,11 +33,11 @@ export default {
     ...mapActions(useCounterStore, ['increment', 'decrement']),
     incrementAction() {
       useCounterStore().increment();
-      this.count = useCounterStore().count;
+      // this.count = useCounterStore().count;
     },
     decrementAction() {
       useCounterStore().decrement();
-      this.count = useCounterStore().count;
+      // this.count = useCounterStore().count;
     },
   }
 }
